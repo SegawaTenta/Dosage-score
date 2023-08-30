@@ -217,7 +217,9 @@
  
  Colom 1: Chr name.
 
+
  Colom 2: Start position.
+
 
  Colom 3: End position.
 
@@ -226,6 +228,7 @@
  
  Colom 1: Number of positions analyzed after filtering.
 
+
  Colom 2~: Total coverage depth for each sample.
 
 ### sliging_window_average.txt in 2_sliding_window_average
@@ -233,9 +236,12 @@
  
  Colom 1: Chr name.
 
+
  Colom 2: Position.
 
+
  Colom 3: Number of positions analyzed after filtering.
+
 
  Colom 4: Average coverage depth for each sample.
 
@@ -244,9 +250,12 @@
 
  Colom 1: Chr name.
 
+
  Colom 2: Position.
 
+
  Colom 3: Number of positions analyzed after filtering.
+
 
  Colom 4: Dosage-score for each sample.
 
