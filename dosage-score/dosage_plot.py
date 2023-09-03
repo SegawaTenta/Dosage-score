@@ -129,25 +129,25 @@ class Dosage_plot(object):
             filtered_df = df11[(df11[1] >= int(colom[1])) & (df11[1] <= int(colom[2]))]
 
             for i in range(sample_num):
-                fig = plt.figure(figsize=(10,4),dpi=300)
+                fig = plt.figure(figsize=(8,4),dpi=300)
                 plt.subplots_adjust(wspace=0.4, hspace=0.6)
                 plt.title(colom[0],fontsize=9)
-                plt.xlim(int(colom[1]),int(colom[2]))
+                plt.xlim(int(colom[1])/1000000,int(colom[2])/1000000)
                 plt.ylim(0,4.5)
                 plt.yticks([0, 1, 2, 3, 4])
-                plt.xlabel("Chr position",fontsize=9)
+                plt.xlabel("Chr position (Mb)",fontsize=9)
                 plt.ylabel("Dosage-score",fontsize=9)
                 plt.gca().spines['right'].set_visible(False)
                 plt.gca().spines['top'].set_visible(False)
-                plt.hlines(1, 0,int(colom[2]), color='black', linestyle='dotted',linewidth=0.5)
-                plt.hlines(2, 0,int(colom[2]), color='black', linestyle='dotted',linewidth=0.5)
-                plt.hlines(3, 0,int(colom[2]), color='black', linestyle='dotted',linewidth=0.5)
-                plt.hlines(4, 0,int(colom[2]), color='black', linestyle='dotted',linewidth=0.5)
+                plt.hlines(1, 0,int(colom[2])/1000000, color='black', linestyle='dotted',linewidth=0.5)
+                plt.hlines(2, 0,int(colom[2])/1000000, color='black', linestyle='dotted',linewidth=0.5)
+                plt.hlines(3, 0,int(colom[2])/1000000, color='black', linestyle='dotted',linewidth=0.5)
+                plt.hlines(4, 0,int(colom[2])/1000000, color='black', linestyle='dotted',linewidth=0.5)
 
                 if chr in hash_color:
-                    plt.plot(filtered_df[1], filtered_df[i+3], color=hash_color[colom[0]],linewidth=3)
+                    plt.plot(filtered_df[1]/1000000, filtered_df[i+3], color=hash_color[colom[0]],linewidth=3)
                 else:
-                    plt.plot(filtered_df[1], filtered_df[i+3], color="#000000",linewidth=3)
+                    plt.plot(filtered_df[1]/1000000, filtered_df[i+3], color="#000000",linewidth=3)
 
                 fig.savefig("{0}/4_plot/{1}_{2}_{3}_{4}.png".format(self.output_dir,name_list[i],str(colom[0]),str(colom[1]),str(colom[2])))
                 plt.clf()
