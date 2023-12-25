@@ -1,20 +1,22 @@
 #!/usr/bin/env python3
 
 import os
+from dosage_score.__init__ import __version__
 import shutil
 import sys
 import argparse
-from utils import time_stamp, clean_cmd, call_log
-from linked_regions import Linked_regions
-from sliding_window_calculation import Sliding_window_calculation
-from dosage_score_calculation import Dosage_score_calculation
+from dosage_score.utils import time_stamp, clean_cmd, call_log
+from dosage_score.linked_regions import Linked_regions
+from dosage_score.sliding_window_calculation import Sliding_window_calculation
+from dosage_score.dosage_score_calculation import Dosage_score_calculation
 
 
 class Dosage_score(object):
 
     def __init__(self):
 
-        parser = argparse.ArgumentParser(description='dosage-score pipeline 2023/8/21')
+        parser = argparse.ArgumentParser(description='Dosage-score pipeline 2023/8/21')
+        self.parser.usage=('dosage_score')
         
         parser.add_argument('-r1','--ref_fa1',
                             required=True,

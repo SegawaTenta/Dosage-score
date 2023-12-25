@@ -2,7 +2,7 @@ import sys
 import os
 import re
 import subprocess as sbp
-from utils import time_stamp, clean_cmd, call_log
+from dosage_score.utils import time_stamp, clean_cmd, call_log
 
 class Linked_regions(object):
 

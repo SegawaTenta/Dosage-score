@@ -4,8 +4,8 @@ import os
 import shutil
 import sys
 import argparse
-from utils import time_stamp, clean_cmd, call_log
-from dosage_plot import Dosage_plot
+from dosage_score.utils import time_stamp, clean_cmd, call_log
+from dosage_score.dosage_plot import Dosage_plot
 
 class Dosage_score_plot(object):
 

@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 from concurrent.futures import ThreadPoolExecutor
-from utils import time_stamp, clean_cmd, call_log
+from dosage_score.utils import time_stamp, clean_cmd, call_log
 
 class Dosage_plot(object):
     def __init__(self,output_dir,ref_fa1,bam_info,chr_position,window_size,color_info,min_rate):

@@ -5,7 +5,7 @@ from datetime import datetime
 
 
 def time_stamp():
-    return '[dosage-score:{}]'.format(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    return '[Dosage-score:{}]'.format(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 
 def clean_cmd(cmd):
     return ' '.join(cmd.split())

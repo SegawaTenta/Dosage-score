@@ -4,7 +4,7 @@ import re
 import subprocess as sbp
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor
-from utils import time_stamp, clean_cmd, call_log
+from dosage_score.utils import time_stamp, clean_cmd, call_log
 
 class Sliding_window_calculation(object):
     def __init__(self,output_dir,ref_fa1,ref_fa2,genome_info,bam_info,thread,minMQ,minBQ,window_size,step_size):
