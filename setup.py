@@ -12,7 +12,7 @@ setup(
     packages=['dosage_score'],
     entry_points={
         'console_scripts': [
-            'dosage_score=dosage_score.dosage_score:main'
+            'dosage_score=dosage_score.dosage_score:main',
             'dosage_score_plot=dosage_score.dosage_score_plot:main'
         ]
     }
