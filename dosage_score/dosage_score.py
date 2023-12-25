@@ -163,8 +163,11 @@ class Dosage_score(object):
         self.step2()
         self.step3()
 
+def main():
+    Dosage_score().run()
+
 if __name__ == '__main__':
     print(time_stamp(), 'start to run dosage-score.', flush=True)
-    Dosage_score().run()
+    Dosage_score().main()
     print(time_stamp(), 'dosage-score successfully finished.\n', flush=True)
 

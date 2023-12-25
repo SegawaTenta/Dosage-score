@@ -78,8 +78,11 @@ class Dosage_score_plot(object):
         os.makedirs('{}/4_plot'.format(self.output_dir), exist_ok=True)
         self.step1()
 
+def main():
+    Dosage_score_plot().run()
+
 if __name__ == '__main__':
     print(time_stamp(), 'start to run dosage-score plot.', flush=True)
-    Dosage_score_plot().run()
+    Dosage_score_plot().main()
     print(time_stamp(), 'dosage-score plot successfully finished.\n', flush=True)
 
