@@ -35,7 +35,7 @@
   ```
   
 ## Usage
-### command : dosage-score
+### command : dosage_score
   Purpose: Calculate the Dosage-score of each genomic region from the NGS alignment data.
 
   Required options
@@ -57,7 +57,7 @@
   -step_size Int                Step size [500000]
   ```
 
-### command : dosage-score-plot
+### command : dosage_score_plot
   Purpose: Plot the Dosage-score.
 
   Required options
