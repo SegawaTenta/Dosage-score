@@ -11,49 +11,49 @@ class Dosage_score_plot(object):
 
     def __init__(self):
 
-        parser = argparse.ArgumentParser(description='dosage-score pipeline 2023/8/21')
+        self.parser = argparse.ArgumentParser(description='dosage-score pipeline 2023/8/21')
         
-        parser.add_argument('-r1','--ref_fa1',
+        self.parser.add_argument('-r1','--ref_fa1',
                             required=True,
                             type=str,
                             help='Referance fasta file.')
 
-        parser.add_argument('-b','--bam_info',
+        self.parser.add_argument('-b','--bam_info',
                             required=True,
                             type=str,
                             help='BAM info file.')
 
-        parser.add_argument('-o','--output_dir',
+        self.parser.add_argument('-o','--output_dir',
                             required=False,
                             type=str,
                             default="dosage_score",
                             help='Output directory. [dosage_score]')
 
-        parser.add_argument('-chr_position','--chr_position',
+        self.parser.add_argument('-chr_position','--chr_position',
                             required=False,
                             type=str,
                             default="",
                             help='Selecting genomic region.')
 
-        parser.add_argument('-window_size','--window_size',
+        self.parser.add_argument('-window_size','--window_size',
                             required=False,
                             type=int,
                             default=2000000,
                             help='Minumum plot in window size. [2000000]')
         
-        parser.add_argument('-c','--color_info',
+        self.parser.add_argument('-c','--color_info',
                             required=False,
                             type=str,
                             default="",
                             help='color info file.')
         
-        parser.add_argument('-min_rate','--min_rate',
+        self.parser.add_argument('-min_rate','--min_rate',
                             required=False,
                             type=float,
                             default=0.05,
                             help='Minimum ratio window.')
 
-        args = parser.parse_args()
+        args = self.parser.parse_args()
         self.ref_fa1=args.ref_fa1
         self.bam_info=args.bam_info
         self.output_dir=args.output_dir

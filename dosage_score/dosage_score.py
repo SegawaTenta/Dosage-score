@@ -14,56 +14,55 @@ from dosage_score.dosage_score_calculation import Dosage_score_calculation
 class Dosage_score(object):
 
     def __init__(self):
-
-        parser = argparse.ArgumentParser(description='Dosage-score pipeline 2023/8/21')
+        self.parser = argparse.ArgumentParser(description='Dosage-score pipeline 2023/8/21')
         self.parser.usage=('dosage_score')
         
-        parser.add_argument('-r1','--ref_fa1',
+        self.parser.add_argument('-r1','--ref_fa1',
                             required=True,
                             type=str,
                             help='Referance fasta file.')
         
-        parser.add_argument('-r2','--ref_fa2',
+        self.parser.add_argument('-r2','--ref_fa2',
                             required=False,
                             type=str,
                             default="",
                             help='Masked referance fasta file.')
         
-        parser.add_argument('-l','--link_file',
+        self.parser.add_argument('-l','--link_file',
                             required=False,
                             type=str,
                             help='Link file compared between 2 genome fasta.')
 
-        parser.add_argument('-g','--genome_info',
+        self.parser.add_argument('-g','--genome_info',
                             required=True,
                             type=str,
                             help='Genome info file.')
 
-        parser.add_argument('-b','--bam_info',
+        self.parser.add_argument('-b','--bam_info',
                             required=True,
                             type=str,
                             help='BAM info file.')
 
-        parser.add_argument('-o','--output_dir',
+        self.parser.add_argument('-o','--output_dir',
                             required=False,
                             type=str,
                             default="dosage_score",
                             help='Output directory. [dosage_score]')
 
-        parser.add_argument('-t','--thread',
+        self.parser.add_argument('-t','--thread',
                             required=False,
                             type=int,
                             default=1,
                             help='Thread. [1]')
 
-        parser.add_argument('-minMQ','--minMQ',
+        self.parser.add_argument('-minMQ','--minMQ',
                             required=False,
                             type=int,
                             default=60,
                             help='Minimum mapping quality for an alignment to be used. [60]')
 
 
-        parser.add_argument('-minBQ','--minBQ',
+        self.parser.add_argument('-minBQ','--minBQ',
                             required=False,
                             type=int,
                             default=13,
@@ -77,19 +76,19 @@ class Dosage_score(object):
                             help='Selecting genomic region.')
         """
 
-        parser.add_argument('-window_size','--window_size',
+        self.parser.add_argument('-window_size','--window_size',
                             required=False,
                             type=int,
                             default=2000000,
                             help='Minumum plot in window size. [2000000]')
         
-        parser.add_argument('-step_size','--step_size',
+        self.parser.add_argument('-step_size','--step_size',
                             required=False,
                             type=int,
                             default=500000,
                             help='Minumum plot in window size. [500000]')
 
-        args = parser.parse_args()
+        args = self.parser.parse_args()
         self.ref_fa1=args.ref_fa1
         self.ref_fa2=args.ref_fa2
         self.genome_info=args.genome_info
